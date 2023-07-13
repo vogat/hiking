@@ -13,7 +13,7 @@ def validate(value):
 # Create your models here.
 class Trail(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='image/')
+    image = models.CharField(max_length=250)
     difficulty = models.IntegerField(validators=[validate])
     description = models.TextField(max_length=250)
 
