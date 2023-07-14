@@ -27,7 +27,7 @@ class TrailCreate(CreateView):
 
 class TrailUpdate(UpdateView):
   model = Trail
-  fields = ['image', 'difficulty', 'description']
+  fields = ['image', 'difficulty', 'description', 'streetAddress', 'city', 'state']
 
 class TrailDelete(DeleteView):
   model = Trail
