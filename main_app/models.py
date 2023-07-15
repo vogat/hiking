@@ -16,6 +16,11 @@ class Trail(models.Model):
     image = models.CharField(max_length=250)
     difficulty = models.IntegerField(validators=[validate])
     description = models.TextField(max_length=250)
+    streetAddress = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    zip = models.CharField(max_length=100)
+    map = models.CharField()
 
     def __str__(self):
         return f'{self.name} ({self.id})'
