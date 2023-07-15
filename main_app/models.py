@@ -20,6 +20,7 @@ class Trail(models.Model):
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     zip = models.CharField(max_length=100)
+    map = models.CharField()
 
     def __str__(self):
         return f'{self.name} ({self.id})'

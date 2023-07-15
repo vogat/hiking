@@ -14,8 +14,10 @@
             <p>City: {{trail.city}}</p>
             <p>State: {{trail.state}}</p>
             <p>zip: {{trail.zip}}</p>
-            <iframe src="http://maps.google.com/?q={{streetAddress}},{{city}}, {{state}}, {{zip}}"></iframe>
 
+            {% if trail.map != 'https://maps/google.com' %}
+                <iframe src="{{ trail.map }}"></iframe>
+            {% endif %}
 
         </div>
         <div class="card-action">
