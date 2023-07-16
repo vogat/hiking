@@ -6,10 +6,10 @@
 {% for trail in trails %}
   <a href="{% url 'detail' trail.id %}">
     <div class="card">
-        <div class="card-content">
-            <img src="{{trail.image}}">
-            <h1>{{ trail.name }}</h1>
-        </div>
+      <div class="card-content">
+        <img src="{{ trail.image }}" class="card-image">
+        <h1 class="card-title">{{ trail.name }}</h1>
+    </div>
     </div>
   </a>
 {% endfor %}
