@@ -9,6 +9,16 @@
             <img src="{{ trail.image }}">
             <p>Difficulty: {{ trail.difficulty }}</p>
             <p>Description: {{ trail.description|linebreaks }}</p>
+            <br>
+            <p>Street Address: {{trail.streetAddress}}</p>
+            <p>City: {{trail.city}}</p>
+            <p>State: {{trail.state}}</p>
+            <p>zip: {{trail.zip}}</p>
+
+            {% if trail.map != 'https://maps/google.com' %}
+                <iframe src="{{ trail.map }}"></iframe>
+            {% endif %}
+
         </div>
         <div class="card-action">
             <a href="{% url 'trails_update' trail.id %}">Edit</a>
