@@ -20,7 +20,11 @@ class Trail(models.Model):
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     zip = models.CharField(max_length=100)
-    map = models.CharField()
+    map = models.CharField(max_length=250)  
+
+    def get_location_url(self):
+        return f"https://www.google.com/maps?q={self.streetAddress}, {self.city}, {self.state}, {self.zip}"
+
 
     def __str__(self):
         return f'{self.name} ({self.id})'

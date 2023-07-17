@@ -4,6 +4,7 @@ from .models import Trail
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
+
 def home(request):
   return render(request, 'home.html')
 
@@ -32,4 +33,3 @@ class TrailUpdate(UpdateView):
 class TrailDelete(DeleteView):
   model = Trail
   success_url = '/trails/'
-
