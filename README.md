@@ -2,16 +2,9 @@
 # This website will use full CRUD operations to show hiking trails in the United States. 
 
 
-# The details included are:
-    - name of the trail
-    - location
-    - difficulty
-    - description
-    - photos
-
 ## User Story
 
-Create a hiking adventure sharing app for people who would like to find great hiking trails and admin can update/delete the details and hikers share hiking recomandations helpful ideas to enjoy hiking.
+Create a hiking adventure sharing app for people who would like to find great hiking trails and hikers can create and share hiking recommendations, helpful ideas to enjoy hiking.
 
 ## App link  
 
@@ -24,4 +17,5 @@ Django, Postgresql, Python, HTML, CSS and Bootstrap
 ## Stretch Goals
 Add user auth 
 
-Add sorting functionality to sort trails by name/description, difficulty and locaton
+Add sorting functionality to sort trails by name/description, difficulty and location
+
