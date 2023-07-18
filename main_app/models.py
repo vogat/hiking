@@ -51,11 +51,6 @@ class Trail(models.Model):
 
 
 class Rating(models.Model):
-    difficulty = models.CharField(
-        max_length=1,
-        choices=RATINGS,
-        default=[4]
-        )
     
     trail = models.ForeignKey(
         Trail,
