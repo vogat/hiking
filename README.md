@@ -1,5 +1,5 @@
 #  Hiking Trails
-# This website will use full CRUD operations to show hiking trails in the United States. 
+This website will use full CRUD operations to show hiking trails in the United States. 
 
 
 # The details included are:
