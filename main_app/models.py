@@ -11,16 +11,27 @@ def validate(value):
         )
 
 # Create your models here.
+RATINGS = (
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    )
+
 class Trail(models.Model):
     name = models.CharField(max_length=100)
     image = models.CharField(max_length=250)
-    difficulty = models.IntegerField(validators=[validate])
+    difficulty = models.CharField(
+        max_length=1,
+        choices=RATINGS,
+        default=[4]
+        )
     description = models.TextField(max_length=250)
     streetAddress = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     zip = models.CharField(max_length=100)
-    map = models.CharField(max_length=250)  
 
     def get_location_url(self):
         return f"https://www.google.com/maps?q={self.streetAddress}, {self.city}, {self.state}, {self.zip}"
@@ -32,16 +43,12 @@ class Trail(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'trail_id': self.id})
     
+    def __str__(self):
+        return f"{self.get_difficulty_display()}"
+    
 # class Images(models.Model):
 #     image = models.CharField(max_length=250)
 
-RATINGS = (
-    ('1', '1'),
-    ('2', '2'),
-    ('3', '3'),
-    ('4', '4'),
-    ('5', '5'),
-    )
 
 class Rating(models.Model):
     difficulty = models.CharField(
@@ -56,4 +63,4 @@ class Rating(models.Model):
     )
 
     def __str__(self):
-        return f'{self.get_RATINGS_display()}'
+        return f"{self.get_difficulty_display()}"
