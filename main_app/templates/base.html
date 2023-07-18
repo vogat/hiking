@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>American Hiking Trails</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header class="navbar navbar-dark bg-dark fixed-top">
+      <nav class="container">
+       
+          <ul class="nav">
+           <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">American Hiking Trails</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'trails_create' %}">Add a Trail</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Explore Trails</a></li>
+          </ul>
+      </nav>
+  </header>
+  <main class="container">
+      {% block content %}
+      {% endblock %}
+  </main>
+ 
+      <div class="footer">
+          &copy; 2023 American Hiking Trails. All Rights Reserved.
+      </div>
+
+</body>
+</html>
